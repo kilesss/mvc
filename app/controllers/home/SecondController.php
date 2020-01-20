@@ -21,7 +21,7 @@ class SecondController  extends Controller
 
     public function indexPage(Request $request){
         // call database function
-        $data = $this->firstModel->getData();
+//        $data = $this->firstModel->getData();
         $this->frontDirector('index.tpl');
     }
 }

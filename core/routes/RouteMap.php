@@ -2,8 +2,15 @@
 namespace routes;
 use routes\RouteMapHelper;
 
+/**
+ * Class RouteMap
+ * @package routes
+ */
 class RouteMap extends RouteMapHelper {
 
+    /**
+     * @var
+     */
     private static $uri;
     /**
      * Explode url to map it to controller.
@@ -17,7 +24,11 @@ class RouteMap extends RouteMapHelper {
        }
 
 
-
+    /**
+     * @param $uri
+     * @param $callback
+     * @return bool
+     */
     public static function redirect($uri, $callback){
         if(self::callbackExecution($callback) != false){
             return true;
@@ -30,7 +41,7 @@ class RouteMap extends RouteMapHelper {
      * Check callback if is executable function.
      * If callback is executable function skip route and execute function
      *
-     * @param    function  $callback callback function
+     * @param      $callback callback function
      * @return     boolean
      *
      */

@@ -1,6 +1,5 @@
 <?php
 namespace autoloader;
-use routes\RouteClass\RouteClass;
 use routes\RouteMap;
 
 ini_set('display_errors', 1);
@@ -11,7 +10,7 @@ error_reporting(E_ALL);
 Autoloader class. 
 
 Load all classes to load framework 
-*/ 
+*/
 class Autoloader{
 
     // DO NOT CHANGE ANYTHING IN THIS ARRAY
@@ -22,16 +21,17 @@ class Autoloader{
         'core/routes/RouteMapHelper.php',
         'core/routes/RouteMap.php',
         'core/routes/RouteClass.php',
-        'core/loaders/CustomClassLoad.php',
+        'core/database/Model.php',
+        'core/database/Medoo.php',
         'core/loaders/ClassLoader.php',
+        'core/loaders/CustomClassLoad.php',
         'route/webRoutes.php',
         'core/frontBuilder/FrontBuilder.php',
-        'core/frontBuilder/DisplayController.php',
+//        'core/frontBuilder/DisplayController.php',
         'core/frontBuilder/BuildDisplay.php',
         'core/validator/ValidatorHelper.php',
         'core/validator/validatorInterface/MainInterface.php',
-        'core/database/Model.php',
-        'core/database/Medoo.php',
+
     );
 
     public static function class_loader(){

@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa94f19c-408c-454a-b7ca-e61ff6f5064c" name="Default Changelist" comment="" />
+    <list default="true" id="fa94f19c-408c-454a-b7ca-e61ff6f5064c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/ModelTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/home/SecondController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/home/SecondController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/FirstModel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/FirstModel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/database/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/database/Model.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/frontBuilder/BuildDisplay.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/frontBuilder/BuildDisplay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/frontBuilder/DisplayController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/frontBuilder/FrontBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/frontBuilder/FrontBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/helpers/Request.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/helpers/Request.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/loaders/Autoloader.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/loaders/Autoloader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/loaders/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/loaders/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/loaders/CustomClassLoad.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/loaders/CustomClassLoad.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/routes/RouteMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/routes/RouteMap.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +27,11 @@
       <executable />
     </execution>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1W1GCcHEEoIymkMWzSbGaEOQ8Oe" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -21,7 +40,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../namespace" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="copyright.profiles" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -62,18 +84,30 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1155" y="243" key="#com.intellij.ide.util.MemberChooser" timestamp="1579520844427">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="-1155" y="243" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520844427" />
     <state x="-1230" y="282" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578402539756">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
     <state x="-1230" y="282" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1578402539756" />
+    <state x="-1213" y="383" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1579520114072">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="-1213" y="383" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520114072" />
     <state x="-1180" y="282" key="FileChooserDialogImpl" timestamp="1578387366026">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
     <state x="-1180" y="282" key="FileChooserDialogImpl/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1578387366026" />
-    <state x="-1145" y="341" key="NewPhpClassDialog" timestamp="1579166172433">
+    <state x="-1145" y="341" key="NewPhpClassDialog" timestamp="1579520157101">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
-    <state x="-1145" y="341" key="NewPhpClassDialog/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579166172433" />
+    <state x="-1145" y="341" key="NewPhpClassDialog/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520157101" />
+    <state x="-1459" y="169" key="SettingsEditor" timestamp="1579520641457">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="-1459" y="169" key="SettingsEditor/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520641457" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1579172065005">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
@@ -86,9 +120,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="466" y="243" key="com.intellij.ide.util.TipDialog/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579079711314" />
-    <state x="-1264" y="124" width="737" height="804" key="find.popup" timestamp="1579172220680">
+    <state x="-1193" y="221" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1579520680586">
       <screen x="-1920" y="6" width="1920" height="1040" />
     </state>
-    <state x="-1264" y="124" width="737" height="804" key="find.popup/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579172220680" />
+    <state x="-1193" y="221" key="com.jetbrains.php.test.PhpNewTestDialog/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520680586" />
+    <state x="-1264" y="124" width="737" height="804" key="find.popup" timestamp="1579520895832">
+      <screen x="-1920" y="6" width="1920" height="1040" />
+    </state>
+    <state x="-1264" y="124" width="737" height="804" key="find.popup/0.0.1536.824/-1920.6.1920.1040@-1920.6.1920.1040" timestamp="1579520895832" />
   </component>
 </project>

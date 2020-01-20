@@ -4,42 +4,18 @@
 namespace loaders;
 
 
+use autoloader\ClassLoader;
 use helpers\ReadIni as ReadIni;
 use helpers\Request;
 
-class CustomClassLoad
+class CustomClassLoad extends ClassLoader
 {
 
 
     private static $classname;
-    private static $functionName;
-    private static $controllerExtension;
     private static $controllerDirFull;
     private static $controllerNamespace;
-    private static $extendedController;
-    private static $extendedControllerPath;
 
-    private static function recursiveScan($dir)
-    {
-        $tree = glob(rtrim($dir, '/') . '/*');
-        if (is_array($tree)) {
-            foreach ($tree as $file) {
-
-                if (is_dir($file)) {
-                    self::recursiveScan($file);
-                } elseif (is_file($file)) {
-
-                    if (preg_match('/[\\\\\/](' . self::$classname . ')' . self::$controllerExtension . '/m', $file)) {
-
-                        str_replace('\\', DIRECTORY_SEPARATOR, $file);
-                        self::$controllerDirFull = $file;
-                        $extendedController = str_replace(self::$classname . self::$controllerExtension, '', $file);
-                        self::$extendedControllerPath = $extendedController . self::$extendedController . self::$controllerExtension;
-                    }
-                }
-            }
-        }
-    }
 
     public static function loadCustomClass($classname, $folder, $namespace = false)
     {

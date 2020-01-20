@@ -47,7 +47,7 @@ class ClassLoader
         self::autoloadClass();
 
     }
-    private static function recursiveScan($dir) {
+    protected static function recursiveScan($dir) {
         $tree = glob(rtrim($dir, '/') . '/*');
         if (is_array($tree)) {
             foreach($tree as $file) {

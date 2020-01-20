@@ -1,17 +1,22 @@
 <?php
-
-
 namespace database;
 
 
 use helpers\ReadIni as ReadIni;
 use Medoo\Medoo;
 
+/**
+ * Class Model
+ * @package database
+ */
 class Model extends Medoo
 {
- private static $instance;
+    private static $instance;
 
- public function __construct()
+    /**
+     * Model constructor.
+     */
+    public function __construct()
  {
      $options= [];
      $ini = new ReadIni('database');
@@ -24,7 +29,11 @@ class Model extends Medoo
      self::getInstance($options);
  }
 
- public static function getInstance(array $options)
+    /**
+     * @param array $options
+     * @return Medoo
+     */
+    public static function getInstance(array $options)
  {
      if (self::$instance == null)
      {

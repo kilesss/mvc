@@ -1,16 +1,31 @@
 <?php
 namespace controllers;
 use frontBuilder\BuildDisplay;
-use loaders\validatorsLoad;
 
+/**
+ * Class Controller
+ * this is general class used for functionality where is need in all controllers
+ * @package controllers
+ */
 class Controller
 {
 
+    /**
+     * Controller constructor.
+     */
     public function __construct()
     {
-
     }
 
+    /**
+     *  Front director generate array for BuildDisplay, the only one which is mandatory  $template
+     * @param $template
+     * @param array $parameters
+     * @param array $cssFiles
+     * @param array $javascriptFiles
+     * @param bool $header
+     * @param bool $footer
+     */
     public function frontDirector($template, $parameters = array(), $cssFiles = array(), $javascriptFiles = array(), $header = false, $footer = false){
 
         if(property_exists($this, 'parameters'))

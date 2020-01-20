@@ -4,6 +4,10 @@ declare(strict_types=1);
 namespace frontBuilder;
 use Smarty;
 
+/**
+ * Class BuildDisplay
+ * @package frontBuilder
+ */
 class BuildDisplay
 {
     private $header;
@@ -13,10 +17,10 @@ class BuildDisplay
     private $templateFile;
     private $parameters = [];
     private $viewBasePath = 'resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR;
+
     public function setHeader($header){
         $this->header = $header;
     }
-
     public function setFooter($footer){
         $this->footer = $footer;
     }
@@ -24,11 +28,9 @@ class BuildDisplay
     public function setCssFiles(Array $cssFiles){
         $this->cssFiles = $cssFiles;
     }
-
     public function setJavascriptFiles(Array $javascriptFiles){
         $this->javascriptFiles = $javascriptFiles;
     }
-
     public function setTemplateFile($templateFile){
         $this->templateFile = $templateFile;
     }
@@ -36,6 +38,11 @@ class BuildDisplay
     public function setParameters(Array $parameters){
         $this->parameters = $parameters;
     }
+
+    /**
+     * call Smarty display and send him template name and array with all parameters
+     * @throws \SmartyException
+     */
     public function generateFront(){
         $dataArray = [];
 
