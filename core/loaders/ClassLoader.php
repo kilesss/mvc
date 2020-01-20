@@ -6,73 +6,77 @@ use helpers\ReadIni as ReadIni;
 use helpers\Request;
 class ClassLoader
 {
-    private $classname;
-    private $functionName;
-    private $controllersDir = "app".DIRECTORY_SEPARATOR."controllers";
-    private $controllerExtension;
-    private $controllerDirFull;
-    private $controllerNamespace;
-    private $extendedController;
-    private $extendedControllerPath;
-    private $routeParam;
-    private $requestType;
-    public function __construct($classname, $functionName,$routeParams, $requestType)
+    private static $classname;
+    private static $functionName;
+    private static $controllersDir = "app".DIRECTORY_SEPARATOR."controllers";
+    private static $controllerExtension;
+    private static $controllerDirFull;
+    private static $controllerNamespace;
+    private static $extendedController;
+    private static $extendedControllerPath;
+    private static $routeParam;
+    private static $requestType;
+    public static function init($classname, $functionName,$routeParams, $requestType)
     {
-        $this->classname = $classname;
-        $this->functionName = $functionName;
-        $this->routeParam = $routeParams;
+        self::$classname = $classname;
+        self::$functionName = $functionName;
+        self::$routeParam = $routeParams;
         $ini = new ReadIni('app');
-        $this->controllerExtension = $ini->searchConfiguration('controllersExtension');
-        $this->controllerNamespace = $ini->searchConfiguration('controllerNamespace');
-        $this->extendedController = $ini->searchConfiguration('extendedControllerName');
-        $this->requestType = $requestType;
-        $this->recursiveScan($this->controllersDir);
-        $this->registerClasses();
-        $this->autoloadExtendClass();
-        $this->autoloadClass();
+        self::$controllerExtension = $ini->searchConfiguration('controllersExtension');
+        self::$controllerNamespace = $ini->searchConfiguration('controllerNamespace');
+        self::$extendedController = $ini->searchConfiguration('extendedControllerName');
+        self::$requestType = $requestType;
+        self::recursiveScan(self::$controllersDir);
+        self::registerClasses();
 
     }
-    private function registerClasses(){
+
+    // do not touch is very important load to be in this order
+    private static function registerClasses(){
         //load extended controller
-        if (is_readable($this->extendedControllerPath)) {
-            require_once($this->extendedControllerPath);
+        if (is_readable(self::$extendedControllerPath)) {
+
+            require_once(self::$extendedControllerPath);
         }
+        self::autoloadExtendClass();
 
         //load main controller
-        if (is_readable($this->controllerDirFull)) {
-            require_once($this->controllerDirFull);
+        if (is_readable(self::$controllerDirFull)) {
+            require_once(self::$controllerDirFull);
         }
+        self::autoloadClass();
+
     }
-    private function recursiveScan($dir) {
+    private static function recursiveScan($dir) {
         $tree = glob(rtrim($dir, '/') . '/*');
         if (is_array($tree)) {
             foreach($tree as $file) {
 
                 if (is_dir($file)) {
-                    $this->recursiveScan($file);
+                    self::recursiveScan($file);
                 } elseif (is_file($file)) {
-                    if(preg_match('/[\\\\\/]('.$this->classname.')'.$this->controllerExtension.'/m',$file)){
+
+                    if(preg_match('/[\\\\\/]('.self::$classname.')'.self::$controllerExtension.'/m',$file)){
+
                         str_replace('\\',DIRECTORY_SEPARATOR,$file);
-                        $this->controllerDirFull = $file;
-                        $extendedController = str_replace($this->classname.$this->controllerExtension,'',$file);
-                        $this->extendedControllerPath =$extendedController.$this->extendedController.$this->controllerExtension;
+                        self::$controllerDirFull = $file;
+                        $extendedController = str_replace(self::$classname.self::$controllerExtension,'',$file);
+                        self::$extendedControllerPath =$extendedController.self::$extendedController.self::$controllerExtension;
                     }
                 }
             }
         }
     }
 
-
-    public function autoloadClass(){
-        $classNameString = $this->controllerNamespace.$this->classname;
+    private static function autoloadClass(){
+        $classNameString = self::$controllerNamespace.self::$classname;
         $loadedClass = new $classNameString();
-        $funcName = $this->functionName;
-        $loadedClass->$funcName(new Request($this->routeParam, $this->requestType));
+        $funcName = self::$functionName;
+        $loadedClass->$funcName(new Request(self::$routeParam, self::$requestType));
     }
-    public function autoloadExtendClass(){
-        $classNameString = $this->controllerNamespace.$this->extendedController;
+
+    private static function autoloadExtendClass(){
+        $classNameString = self::$controllerNamespace.self::$extendedController;
         new $classNameString();
-
     }
-
 }

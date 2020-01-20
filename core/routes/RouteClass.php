@@ -16,15 +16,21 @@ class RouteClass extends RouteMapHelper {
 
     public static function get($uri,$callback){
         $res = RouteMapHelper::loadParameters($uri,$callback,'GET');
-       if($res[0] == false)
+        if($res[0] == false)
             return false;
 
-        new ClassLoader($res[0][0], $res[0][1],$res[1], $res[2]);
+        ClassLoader::init($res[0][0], $res[0][1],$res[1], $res[2]);
     }
 
     public static function post($uri,$callback){
-        RouteMapHelper::loadParameters($uri,$callback,'POST');
+        $res = RouteMapHelper::loadParameters($uri,$callback,'POST');
+        if($res[0] == false)
+            return false;
+
+        ClassLoader::init($res[0][0], $res[0][1],$res[1], $res[2]);
     }
+
+
     public static function put($uri,$callback){
         RouteMapHelper::loadParameters($uri,$callback,'PUT');
     }

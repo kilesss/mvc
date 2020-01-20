@@ -1,8 +1,15 @@
 <?php
 namespace controllers;
 use frontBuilder\BuildDisplay;
+use loaders\validatorsLoad;
+
 class Controller
 {
+
+    public function __construct()
+    {
+
+    }
 
     public function frontDirector($template, $parameters = array(), $cssFiles = array(), $javascriptFiles = array(), $header = false, $footer = false){
 

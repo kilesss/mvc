@@ -22,11 +22,16 @@ class Autoloader{
         'core/routes/RouteMapHelper.php',
         'core/routes/RouteMap.php',
         'core/routes/RouteClass.php',
+        'core/loaders/CustomClassLoad.php',
         'core/loaders/ClassLoader.php',
         'route/webRoutes.php',
         'core/frontBuilder/FrontBuilder.php',
         'core/frontBuilder/DisplayController.php',
         'core/frontBuilder/BuildDisplay.php',
+        'core/validator/ValidatorHelper.php',
+        'core/validator/validatorInterface/MainInterface.php',
+        'core/database/Model.php',
+        'core/database/Medoo.php',
     );
 
     public static function class_loader(){
